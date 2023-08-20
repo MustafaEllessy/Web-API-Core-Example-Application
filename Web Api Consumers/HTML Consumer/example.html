@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("http://localhost:5246/api/Department/", 
+    function(result){
+      for(let x of result)
+      {
+        document.getElementById("div1").innerHTML+=x.name +"</br>";
+      }
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Send an HTTP GET request to a page and get the result back</button>
+<div id="div1">
+
+</div>
+</body>
+</html>
